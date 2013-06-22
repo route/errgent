@@ -1,6 +1,9 @@
-require 'rails/all'
-require 'minitest/autorun'
+require 'rails'
+require 'action_view'
+require 'action_controller'
 require 'active_support/testing/isolation'
+
+require 'minitest/autorun'
 
 require 'errgent'
 
