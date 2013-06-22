@@ -44,4 +44,13 @@ class ErrgentRendererTest < MiniTest::Unit::TestCase
     assert File.exists?(filename)
     assert_equal 'hi_there!', File.read(filename)
   end
+
+  def test_partials
+    filename = File.join(TMP_PATH, 'partials.html')
+
+    @renderer.render('layouts/partials', filename)
+
+    assert File.exists?(filename)
+    assert_equal 'First', File.read(filename)
+  end
 end
