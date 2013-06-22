@@ -8,14 +8,6 @@ module Rake
     attr_reader :name, :renderer
     attr_accessor :codes, :source, :destination
 
-    # You can customize this rake task as follows:
-    #
-    #    Rake::ErrgentTask.new do |t|
-    #      t.codes = [500, 403, 404, 422]
-    #      t.source = 'layouts/error_page'
-    #      t.destination = 'public'
-    #    end
-    #
     def initialize(name = :errgent)
       @name = name
       @renderer = Errgent::Renderer.new
