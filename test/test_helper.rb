@@ -6,6 +6,7 @@ require 'active_support/testing/isolation'
 require 'minitest/autorun'
 
 require 'errgent'
+require 'errgent/task'
 
 class MiniTest::Unit::TestCase
   VIEW_PATH = File.expand_path('../views', __FILE__)

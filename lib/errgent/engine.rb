@@ -1,9 +1,7 @@
-require 'errgent/task'
-
 module Errgent
   class Engine < ::Rails::Engine
     rake_tasks do
-      Rake::ErrgentTask.new
+      load 'errgent/task.rb'
     end
   end
 end
