@@ -1,7 +1,8 @@
-Capistrano::Configuration.instance.load do
-  after 'deploy:assets:precompile', 'errgent'
-
-  task :errgent do
-    run "cd #{latest_release} && RAILS_ENV=#{rails_env} bundle exec rake errgent"
+if defined?(Capistrano::VERSION)
+  if Gem::Version.new(Capistrano::VERSION).release >= Gem::Version.new('3.0.0')
+    version = 3
   end
 end
+
+version ||= 2
+require_relative "capistrano/v#{version}"

@@ -1,15 +1,10 @@
-# coding: utf-8
-lib = File.expand_path('../lib', __FILE__)
-$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'errgent/version'
-
 Gem::Specification.new do |spec|
   spec.name          = 'errgent'
-  spec.version       = Errgent::VERSION
+  spec.version       = '1.0.0'
   spec.authors       = 'Dmitry Vorotilin'
   spec.email         = 'd.vorotilin@gmail.com'
-  spec.description   = 'Errgent generates error pages for your Rails application'
   spec.summary       = 'Error pages generator'
+  spec.description   = 'Generate error pages for Rails applications'
   spec.homepage      = 'https://github.com/route/errgent'
   spec.license       = 'MIT'
 

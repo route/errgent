@@ -1,12 +1,11 @@
+require 'minitest/autorun'
+
 require 'rails'
 require 'action_view'
 require 'action_controller'
 require 'active_support/testing/isolation'
 
-require 'minitest/autorun'
-
 require 'errgent'
-require 'errgent/task'
 
 class MiniTest::Unit::TestCase
   VIEW_PATH = File.expand_path('../views', __FILE__)
@@ -20,7 +19,7 @@ class MiniTest::Unit::TestCase
         config.eager_load = false
 
         routes {
-          root :to => 'home#index'
+          root to: 'home#index'
         }
 
         helpers_module = Module.new do
@@ -32,6 +31,10 @@ class MiniTest::Unit::TestCase
         helpers.send(:include, helpers_module)
       end
     end
+  end
+
+  def setup
+    app.initialize!
   end
 
   def teardown
