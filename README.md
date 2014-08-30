@@ -14,11 +14,10 @@ gem 'errgent'
 
 ## Usage
 
-`Errgent` ships with predefined rake task that you can run locally or on your
-server using `Capistrano`. In order to generate pages simply run `rake errgent`.
-By default the layout for error pages should be located in `layouts/error_page`.
-But you can customize this behaviour as many other things creating your own
-task in `lib/tasks/errgent.rake`:
+`Errgent` ships with rake task that you can run locally or on your server using
+`Capistrano`. In order to generate pages simply run `rake errgent`. By default
+`layouts/error_page` is used as a layout. But you can customize this behaviour
+as many other things creating your own task in `lib/tasks/errgent.rake`:
 
 ```ruby
 desc 'Generate error pages'
@@ -45,15 +44,22 @@ task errgent: :environment do
 end
 ```
 
-Since almost all applications use `Sprockets`, the links to stylesheets or js
-files must be represented with digest in their names. It's barely possible to do
-locally unless you generate assets locally either. That's why `Errgent` ships
-with `Capistrano` task, in order to do it during deployment. Just put this to
-`deploy.rb` or `Capfile` (`~> 2.0` and `~> 3.0` supported):
+## Capistrano
+
+Since almost all applications use `Asset Pipeline`, the links to stylesheets,
+js or images must be represented with digest in their names. It's barely possible
+to do locally unless you generate assets locally either. That's why `Errgent`
+ships with `Capistrano` task. Just put this to `deploy.rb` or `Capfile` (`~> 2.0`
+and `~> 3.0` supported) and all the pages will be generated after
+`assets:precompile` task on your server during deployment:
 
 ```ruby
 require 'errgent/capistrano'
 ```
+
+In other words for development, generate pages locally see how it looks, fix it
+if it needs. Then re-generate them on the server, because development version
+isn't workable in production.
 
 ## License
 
