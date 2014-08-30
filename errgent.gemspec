@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = 'errgent'
-  spec.version       = '1.0.0'
+  spec.version       = '2.0.0'
   spec.authors       = 'Dmitry Vorotilin'
   spec.email         = 'd.vorotilin@gmail.com'
   spec.summary       = 'Error pages generator'
