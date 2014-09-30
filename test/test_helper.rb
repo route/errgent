@@ -38,6 +38,8 @@ class ActiveSupport::TestCase
   end
 
   def teardown
-    Dir[File.join(TMP_PATH, '*')].each { |f| File.delete(f) }
+    files = [@output]
+    @codes.each { |c| files << @output % c } if @codes
+    files.each { |f| File.delete(f) if File.exists?(f) }
   end
 end
