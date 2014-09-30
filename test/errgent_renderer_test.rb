@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class Errgent::RendererTest < ::MiniTest::Unit::TestCase
+class Errgent::RendererTest < ActiveSupport::TestCase
   include ::ActiveSupport::Testing::Isolation
 
   def test_renders_given_layout

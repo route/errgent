@@ -7,7 +7,7 @@ require 'active_support/testing/isolation'
 
 require 'errgent'
 
-class MiniTest::Unit::TestCase
+class ActiveSupport::TestCase
   VIEW_PATH = File.expand_path('../views', __FILE__)
   TMP_PATH = File.expand_path('../tmp', __FILE__)
 
