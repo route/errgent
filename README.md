@@ -44,6 +44,19 @@ task errgent: :environment do
 end
 ```
 
+## Mina
+
+```ruby
+
+require 'errgent/mina'
+
+task deploy: :environment do
+  deploy do
+    ...
+    invoke :'errgent:generate'
+
+```
+
 ## Capistrano
 
 Since almost all applications use `Asset Pipeline`, the links to stylesheets,
