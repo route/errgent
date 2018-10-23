@@ -17,11 +17,13 @@ gem 'errgent'
 `Errgent` ships with rake task that you can run locally or on your server using
 `Capistrano`. In order to generate pages simply run `rake errgent`. By default
 `layouts/error_page` is used as a layout. But you can customize this behaviour
-as many other things creating your own task in `lib/tasks/errgent.rake`:
+as many other things creating your own task in `lib/tasks`. Make sure you didn't
+name your task `errgent` as rake will run both tasks yours and original one making
+your overrides not working. Name it as `generate_error_pages` for e.g.:
 
 ```ruby
 desc 'Generate error pages'
-task errgent: :environment do
+task generate_error_pages: :environment do
   renderer = Errgent::Renderer.new(
     codes: [403, 404, 422, 500], # error codes by default, @code variable is available in layout
     vars: { name: 'value' }, # variable @name will be available in layout
