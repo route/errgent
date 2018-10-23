@@ -9,7 +9,7 @@ class Errgent::RendererTest < ActiveSupport::TestCase
 
     renderer.render
 
-    assert File.exists?(@output)
+    assert File.exist?(@output)
     assert_equal 'Hi, Dmitry!', File.read(@output)
   end
 
@@ -20,7 +20,7 @@ class Errgent::RendererTest < ActiveSupport::TestCase
 
     renderer.render
 
-    assert File.exists?(@output)
+    assert File.exist?(@output)
     assert_equal 'you', File.read(@output)
   end
 
@@ -30,7 +30,7 @@ class Errgent::RendererTest < ActiveSupport::TestCase
 
     renderer.render
 
-    assert File.exists?(@output)
+    assert File.exist?(@output)
     assert_equal '/', File.read(@output)
   end
 
@@ -40,7 +40,7 @@ class Errgent::RendererTest < ActiveSupport::TestCase
 
     renderer.render
 
-    assert File.exists?(@output)
+    assert File.exist?(@output)
     assert_equal 'hi_there!', File.read(@output)
   end
 
@@ -60,7 +60,7 @@ class Errgent::RendererTest < ActiveSupport::TestCase
 
     renderer.render
 
-    assert File.exists?(@output)
+    assert File.exist?(@output)
     assert_equal 'Dmitry = admin', File.read(@output)
   end
 
@@ -70,7 +70,7 @@ class Errgent::RendererTest < ActiveSupport::TestCase
 
     renderer.render
 
-    assert File.exists?(@output)
+    assert File.exist?(@output)
     assert_equal 'First', File.read(@output)
   end
 
@@ -81,10 +81,10 @@ class Errgent::RendererTest < ActiveSupport::TestCase
 
     renderer.render
 
-    assert File.exists?(@output % 404)
+    assert File.exist?(@output % 404)
     assert_equal '404', File.read(@output % 404)
 
-    assert File.exists?(@output % 500)
+    assert File.exist?(@output % 500)
     assert_equal '500', File.read(@output % 500)
   end
 

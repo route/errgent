@@ -40,6 +40,6 @@ class ActiveSupport::TestCase
   def teardown
     files = [@output]
     @codes.each { |c| files << @output % c } if @codes
-    files.each { |f| File.delete(f) if File.exists?(f) }
+    files.each { |f| File.delete(f) if File.exist?(f) }
   end
 end
